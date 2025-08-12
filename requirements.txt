@@ -1,10 +1,4 @@
-# Core dependencies for Multi-Dataset LCA Feature Extraction
 torch>=1.12.0
 torchvision>=0.13.0
 numpy>=1.21.0
-
-# Optional dependencies for development
-# matplotlib>=3.5.0  # For visualization (uncomment if needed)
-# jupyter>=1.0.0     # For notebook development (uncomment if needed)
-# pytest>=6.0.0      # For testing (uncomment if needed)
 
