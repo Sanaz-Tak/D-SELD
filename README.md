@@ -2,6 +2,9 @@
 
 A PyTorch implementation of innovative Exemplar Locally Competitive Algorithm (LCA) across multiple datasets using various CNN architectures.
 
+## Project Overview
+The project bridges traditional deep learning with neuromorphic computing principles, making it suitable for both research and practical applications in sparse representation learning.
+
 ## Requirements
 
 - Python 3.8+
@@ -90,7 +93,7 @@ The project consists of two main components:
 
 ## Citation
 
-If you use this code in your research, please cite:
+If you use this repo in your research, please consider citing:
 
 ```bibtex
 @article{takaghaj2024dseld,
