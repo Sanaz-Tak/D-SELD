@@ -2,14 +2,6 @@
 
 A PyTorch implementation of innovative Exemplar Locally Competitive Algorithm (LCA) across multiple datasets using various CNN architectures.
 
-## Features
-
-- **Multiple CNN Models**: Support for ResNet152, DenseNet121, VGG16, EfficientNet, MobileNet, and Inception
-- **Multi-Dataset Support**: CIFAR-10, CIFAR-100, ImageNet, and MNIST
-- **LCA Integration**: Locally Competitive Algorithm for sparse feature representation
-- **Interactive CLI**: User-friendly command-line interface for model and dataset selection
-- **GPU/CPU Compatible**: Automatic device detection with memory optimization
-
 ## Requirements
 
 - Python 3.8+
