@@ -267,12 +267,12 @@ def main():
                        choices=['resnet152', 'densenet121', 'vgg16', 'efficientnet', 'mobilenet', 'inception', 'none'],
                        help='CNN model to use (use "none" for MNIST)')
     parser.add_argument('--data_path', type=str, default='./data', help='Data path')
-    parser.add_argument('--dictionary_num', type=int, default=400, help='Dictionary size')
-    parser.add_argument('--neuron_iter', type=int, default=50, help='Neuron iterations')
+    parser.add_argument('--dictionary_num', type=int, default=50000, help='Dictionary size')
+    parser.add_argument('--neuron_iter', type=int, default=100, help='Neuron iterations')
     parser.add_argument('--lr_neuron', type=float, default=0.01, help='Neuron learning rate')
     parser.add_argument('--landa', type=float, default=2, help='Sparsity coefficient')
-    parser.add_argument('--batch_size', type=int, default=50, help='Batch size for data loading and feature extraction')
-    parser.add_argument('--max_samples', type=int, default=50, help='Maximum test samples for LCA processing (dictionary uses all training samples)')
+    parser.add_argument('--batch_size', type=int, default=16, help='Batch size for data loading and feature extraction')
+    parser.add_argument('--max_test_samples', type=int, default=10000, help='Maximum test samples for LCA processing (dictionary uses all training samples)')
     parser.add_argument('--num_workers', type=int, default=0, help='Number of DataLoader workers (0 for memory efficiency)')
     parser.add_argument('--pin_memory', action='store_true', help='Pin memory for faster GPU transfer (uses more RAM)')
     
@@ -512,7 +512,7 @@ def main():
     
     # Process the same data with LCA in batches (capped at dict_size)
     sample_count = 0
-    batch_size = min(100, args.batch_size)  # Use smaller batches for LCA
+    batch_size = min(8, args.batch_size)  # Use smaller batches for LCA
     
     for i in range(0, min(dict_size, len(all_labels)), batch_size):
         if sample_count >= dict_size:
@@ -656,7 +656,7 @@ def main():
     # Process test data in batches
     sample_count = 0
     for batch_data, batch_labels in testing_dataloader:
-        if sample_count >= args.max_samples:  # Limit test samples
+        if sample_count >= args.max_test_samples:  # Limit test samples
             break
             
         print(f"Processing test batch {sample_count//args.batch_size + 1}, samples {sample_count}-{sample_count + len(batch_data)}")

@@ -101,8 +101,8 @@ def main():
         '--dataset', dataset,
         '--model', model,
         '--data_path', data_path,
-        '--batch_size', '50',
-        '--max_samples', '50'
+        '--batch_size', '16',
+        '--max_test_samples', '10000'
     ]
     
     print(f"\nRunning command:")

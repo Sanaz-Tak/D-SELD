@@ -56,10 +56,10 @@ python src/lca_feature_extractor.py --dataset cifar10 --model resnet152
 - `--dataset`: Dataset name (cifar10, cifar100, imagenet, mnist)
 - `--model`: Model architecture (resnet152, densenet121, vgg16, efficientnet, mobilenet, inception, none)
 - `--data_path`: Path to dataset directory
-- `--batch_size`: Batch size for processing (default: 50)
-- `--max_samples`: Maximum samples to process (default: 50)
-- `--dictionary_num`: Number of dictionary elements (default: 400)
-- `--neuron_iter`: Number of neuron iterations (default: 50)
+- `--batch_size`: Batch size for processing (default: 16)
+- `--max_test_samples`: Maximum samples to test (default: 10000)
+- `--dictionary_num`: Number of dictionary elements (default: 50000)
+- `--neuron_iter`: Number of neuron iterations (default: 100)
 - `--lr_neuron`: Learning rate for neurons (default: 0.01)
 - `--landa`: Sparsity parameter (default: 2)
 
@@ -95,23 +95,6 @@ The project consists of two main components:
 - **`interactive_runner.py`**: Interactive interface for dataset and model selection
 - **`data_*/`**: Dataset directories (automatically created)
 
-### LCA Algorithm
-
-The LCA algorithm provides:
-- Sparse feature representation
-- Dictionary learning
-- Neuron competition mechanism
-- Configurable sparsity constraints
-
-## Research Applications
-
-This implementation is suitable for:
-- Sparse coding studies
-- Computer Vision and CNN feature analysis
-- Transfer learning experiments
-- Neuromorphic computing research
-
-
 
 ## Citation
 
@@ -130,16 +113,7 @@ If you use this code in your research, please cite:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contributing
-
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## Issues
 
 If you encounter any issues, please report them on the [GitHub Issues](https://github.com/Sanaz-Tak/D-SELD/issues) page.
-
-## Acknowledgments
-
-- PyTorch team for the deep learning framework
-- Torchvision for pre-trained models and datasets
-- Neuromorphic computing community for foundational LCA research
